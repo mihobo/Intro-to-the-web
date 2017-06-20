@@ -3,13 +3,15 @@
   <%= @name_generator %>
 </h1>
 
-<div>
-<form action="/named-cat">
-  <label for="name"> Name:</label>
-  <input type="text" name="name">
-  <input type="submit" value="Submit">
-</form>
-</div>
+<% if @name_generator.nil? %>
+  <div>
+    <form action="/cat-form" method="get">
+      <label for="name"> Name:</label>
+      <input type="text" name="name">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+<% end %>
 
 <div>
 '<img style="border: 5px dashed red" src="http://f.cl.ly/items/0k0v3e2X3l2f3i1n1Y19/Screen%20Shot%202013-09-10%20at%2011.32.00.png" alt="PUSSYCAT">'
